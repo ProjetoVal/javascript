@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Aprendendo JavaScript</h1>
+    <!--1º Cria elementos html e coloca um id pra serem chamandos-->
+    <p id="elementoP0">elementoP0</p>
+    <p id="elementoP1">elementoP1</p>
+    <p id="elementoP2">elementoP2</p>
+
+    <button id="btn">Eventos do Teclado</button>
+
+    <script>
+  
+            //2º Pegando os elementos pelo id para ser manipulados  
+            var elementoP = document.getElementById("elementoP");
+            var btn = document.getElementById("btn");
+            //3º Adicionando ouvinte de eventos ao botão 
+            btn.addEventListener("keydown", keydown);
+            btn.addEventListener("keyup", keyup);
+            btn.addEventListener("keypress", keypress);
+
+            //4º Criando as funções dos eventos a serem executados
+            function keydown()
+            {
+                elementoP0.style.backgroundColor = "blue";
+                elementoP0.style.color = "white";
+            }
+            function keyup() 
+            {
+                elementoP1.style.backgroundColor = "green";
+                elementoP1.style.color = "orange"
+            }
+            function keypress() 
+            {
+                elementoP2.style.backgroundColor = "violet";
+                elementoP2.style.color = "Indigo"
+            }
+            /*
+                Eventos de Teclado:
+
+                    keydown: Ocorre quando uma tecla é pressionada.
+                    keyup: Ocorre quando uma tecla é liberada.
+                    keypress: Ocorre quando uma tecla é pressionada e depois liberada.
+            */
+        
+    </script>
+
+
+</body>
+
+</html>

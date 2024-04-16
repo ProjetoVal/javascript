@@ -1,0 +1,15 @@
+h1{
+    color: blue;
+}
+.lampada_off{
+background: url(/img/lampada.png) 24px 19;
+width: 120px;
+height:190px;
+
+}
+.lampada_on{
+    background: url(/img/lampada.png) -226px -10px;
+    width: 120px;
+     height: 190px;
+   
+}

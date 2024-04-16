@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+</head>
+
+<body>
+    <h2>Exemplo de Formulário</h2>
+    <form id="meuFormulario" onsubmit="enviarFormulario()">
+       
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+       
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function enviarFormulario() 
+        {
+            var formulario = document.getElementById("meuFormulario");
+            var nome = formulario.elements["nome"].value;
+            var senha = formulario.elements["senha"].value;
+          
+            // Exibindo os dados do formulário
+            alert("Nome: " + nome + "\nSenha: " + senha);
+        }
+    </script>
+</body>
+
+</html>

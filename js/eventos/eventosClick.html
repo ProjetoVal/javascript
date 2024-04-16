@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Aprendendo JavaScript</h1>
+
+    <p id="elementoP">5+4</p>
+    <p id="elementoP2">5-4</p>
+
+    <button id="btnMudarTexto">soma de 5 + 4 p</button>
+    <button id="btnMudarTexto2" onclick="clickei2()">subtração de 5 - 4</button>
+
+    <script>
+        var elementoP = document.getElementById("elementoP");
+        var btnMudarTexto = document.getElementById("btnMudarTexto");
+
+        btnMudarTexto.addEventListener("click", clickei);
+
+        function clickei() {
+            elementoP.innerHTML = 'soma = ' + (5 + 4);
+            elementoP.style.backgroundColor = "blue";
+            elementoP.style.color = "white";
+            elementoP.style.fontFamily = "Arial, sans-serif";
+        }
+        function clickei2() {
+            elementoP2.innerHTML = "A Subtração = " + (5 - 4);
+            elementoP2.style.backgroundColor = "green";
+            elementoP2.style.color = "orange"
+            elementoP.style.fontFamily = "Arial, sans-serif";
+        }
+
+    </script>
+</body>
+
+</html>

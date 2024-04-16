@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Aprendendo JavaScript</h1>
+
+    <p id="elementoP0">elementoP0</p>
+    <p id="elementoP1">elementoP1</p>
+    <p id="elementoP2">elementoP2</p>
+    <p id="elementoP3">elementoP3</p>
+    <p id="elementoP4">elementoP4</p>
+
+    <button id="btn">Eventos do Mouse</button>
+
+
+    <script>
+        // Pegando os elementos pelo id para ser manipulados  
+        var elementoP = document.getElementById("elementoP");
+        var btn = document.getElementById("btn");
+
+        // Adicionando ouvinte de eventos ao botão 
+        btn.addEventListener("click", click);
+        btn.addEventListener("mouseover", mouseover);
+        btn.addEventListener("mouseout", mouseout);
+        btn.addEventListener("mousedown", mousedown);
+        btn.addEventListener("mouseup", mouseup);
+
+        // Criando as funções dos eventos a serem executados
+        function click() {
+            elementoP0.style.backgroundColor = "blue";
+            elementoP0.style.color = "white";
+        }
+        function mouseover() {
+            elementoP1.style.backgroundColor = "green";
+            elementoP1.style.color = "orange"
+        }
+        function mouseout() {
+            elementoP2.style.backgroundColor = "violet";
+            elementoP2.style.color = "Indigo"
+        }
+        function mousedown() {
+            elementoP3.style.backgroundColor = "MediumAquamarine";
+            elementoP3.style.color = "Teal"
+        }
+        function mouseup() {
+            elementoP4.style.backgroundColor = "Yellow";
+            elementoP4.style.color = "AliceBlue"
+        }
+
+        /*
+            Eventos de Mouse:
+
+            click: Ocorre quando um elemento é clicado.
+            mouseover: Ocorre quando o ponteiro do mouse entra na área de um elemento.
+            mouseout: Ocorre quando o ponteiro do mouse sai da área de um elemento.
+            mousedown: Ocorre quando um botão do mouse é pressionado.
+            mouseup: Ocorre quando um botão do mouse é solto.
+        */
+
+
+
+
+    </script>
+</body>
+
+</html>

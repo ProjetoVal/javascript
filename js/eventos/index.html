@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Aprendendo JavaScript</h1>
+
+    <p id="elementoP">Estuando JavaScript</p>
+    <div id="IdElementoDiv">div</div>
+
+    <button id="btnMudarTexto">mudando texto da tag p</button>
+    <button id="btnMudarTexto2" onclick="clickei2()">FUNCAO CLICKEI 2 mudando texto da tag p</button>
+    <button id="IdBtnMudarTextoDiv">FUNCAO CLICKEI 3 mudando texto da tag div</button>
+    <script>
+        var elementoP = document.getElementById("elementoP");
+        var btnMudarTextoP = document.getElementById("btnMudarTexto");
+        var VariavelbtnMudarTextoDiv = document.getElementById("IdBtnMudarTextoDiv");
+
+        VariavelbtnMudarTextoDiv.addEventListener("click", clickei);
+
+        function clickei()
+        {
+            
+            IdElementoDiv.innerHTML = "Texto atualizado da tag div";
+            alert(IdElementoDiv.innerHTML)
+            console.log("Exibindo os dados console: \n"+  IdElementoDiv.innerHTML );
+            document.write("<h3>Mudando texto na div: </h3>" + IdElementoDiv.innerHTML);
+        }
+        function clickei2()
+        {
+            elementoP.innerHTML = "FUNCAO CLICKEI 2 ";
+        }
+
+    </script>
+</body>
+
+</html>

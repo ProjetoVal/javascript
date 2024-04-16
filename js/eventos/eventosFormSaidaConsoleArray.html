@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+</head>
+
+<body>
+    <h2>Exemplo de Formulário</h2>
+    <form id="meuFormulario" onsubmit="enviarFormulario(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select><br><br>
+
+        <label>Preferências de Música:</label><br>
+        <input type="checkbox" id="rock" name="musica" value="rock">
+        <label for="rock">Rock</label><br>
+        <input type="checkbox" id="pop" name="musica" value="pop">
+        <label for="pop">Pop</label><br>
+        <input type="checkbox" id="indie" name="musica" value="indie">
+        <label for="indie">Indie</label><br><br>
+
+        <label>Estilo de Música Favorito:</label><br>
+        <input type="radio" id="estilo1" name="estilo" value="rock">
+        <label for="estilo1">Rock</label><br>
+        <input type="radio" id="estilo2" name="estilo" value="pop">
+        <label for="estilo2">Pop</label><br>
+        <input type="radio" id="estilo3" name="estilo" value="indie">
+        <label for="estilo3">Indie</label><br><br>
+
+        <label for="filmes">Filmes favoritos:</label><br>
+        <select id="filmes" name="filmes[]" multiple>
+            <option value="aventura">Aventura</option>
+            <option value="comedia">Comédia</option>
+            <option value="drama">Drama</option>
+            <option value="acao">Ação</option>
+        </select><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            var formulario = document.getElementById("meuFormulario");
+            var nome = formulario.elements["nome"].value;
+            var senha = formulario.elements["senha"].value;
+            var genero = formulario.elements["genero"].value;
+
+            // Obtendo as preferências de música selecionadas
+            var preferencias = [];
+            var checkboxes = formulario.elements["musica"];
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    preferencias.push(checkboxes[i].value);
+                }
+            }
+
+            // Obtendo o estilo de música favorito selecionado
+            var estilo = "";
+            var radios = formulario.elements["estilo"];
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    estilo = radios[i].value;
+                    break;
+                }
+            }
+
+            // Obtendo os filmes favoritos selecionados
+            var filmes = [];
+            var filmesSelect = formulario.elements["filmes[]"];
+            for (var i = 0; i < filmesSelect.length; i++) {
+                if (filmesSelect[i].selected) {
+                    filmes.push(filmesSelect[i].value);
+                }
+            }
+
+            // Criando um objeto com os dados coletados
+            var dadosFormulario = {
+                nome: nome,
+                senha: senha,
+                genero: genero,
+                preferenciasMusica: preferencias,
+                estiloMusicaFavorito: estilo,
+                filmesFavoritos: filmes
+            };
+
+            // Exibindo os dados do formulário no console
+            console.log("Dados do Formulário:", dadosFormulario);
+
+        }
+    </script>
+</body>
+
+</html>

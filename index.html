@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!---->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>teste</h1>
+
+    <div class="lampada_off"></div><br>
+    <button id="elementoBotao">Ligar</button>
+
+
+    <!--javascript-->
+    <script>
+
+        var elementoBotao = document.getElementById("elementoBotao");
+        elementoBotao.addEventListener("click", click);
+
+        window.onload = function () {
+           
+            function click() 
+            {
+                document.getElementsByClassName("lampada_on")
+             /*   elementoBotao.style.background = "url(/img/lampada.png) -226px -10px"
+                elementoBotao.style.width = "120px"
+                elementoBotao.style.height = "190px"*/
+            }
+        }
+    </script>
+
+</body>
+
+</html>

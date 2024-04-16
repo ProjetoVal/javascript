@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formulário</title>
+</head>
+
+<body>
+    <h2>Exemplo de Formulário</h2>
+    <form id="meuFormulario" onsubmit="enviarFormulario()">
+      
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select><br><br>
+
+        <label for="filmes">Filmes favoritos:</label><br>
+        <select id="filmes" name="filmes[]" multiple>
+            <option value="aventura">Aventura</option>
+            <option value="comedia">Comédia</option>
+            <option value="drama">Drama</option>
+            <option value="acao">Ação</option>
+        </select><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function enviarFormulario()
+        {
+            var formulario = document.getElementById("meuFormulario");
+            var genero = formulario.elements["genero"].value;
+
+            // Obtendo os filmes favoritos selecionados
+            var filmes = [];
+            var filmesSelect = formulario.elements["filmes[]"];
+            for (var i = 0; i < filmesSelect.length; i++) {
+                if (filmesSelect[i].selected) {
+                    filmes.push(filmesSelect[i].value);
+                }
+            }
+
+            // Exibindo os dados do formulário
+            alert("Gênero: " + genero + "\nFilmes Favoritos: " + filmes.join(", "));
+        }
+    </script>
+</body>
+
+</html>
